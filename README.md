@@ -3,7 +3,9 @@ The C library function int printf(const char *format, ...) sends formatted outpu
 
 Declaration
 Following is the declaration for printf() function.
-
+Resource 
+C library function - printf()
+https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm
 int printf(const char *format, ...)
 Parameters
 format − This is the string that contains the text to be written to stdout. It can optionally contain embedded format tags that are replaced by the values specified in subsequent additional arguments and formatted as requested. Format tags prototype is %[flags][width][.precision][length]specifier, which is explained below −
