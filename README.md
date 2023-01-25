@@ -198,3 +198,5 @@ ASCII value = 97, Character = a
 ASCII value = 98, Character = b
 ASCII value = 99, Character = c
 ASCII value = 100, Character = d
+
+Authors © Previn Bogopa and Melki Mloyi
