@@ -17,7 +17,7 @@ int print_char(va_list types, char buffer[],
 {
 	char c = va_arg(types, int);
 
-	return (handle_write_char(c, buffer, flags, width, precision,size));
+	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
 /****************** PRINT A STRING ******************/
 /**
@@ -31,7 +31,7 @@ int print_char(va_list types, char buffer[],
  * Return: Number of chars printed
  */
 int print_string(va_list types, char buffer[],
-    int flags, int width, int precision, int size)
+		int flags, int width, int precision, int size)
 {
 	int length = 0, i;
 	char *str = va_arg(types, char *);
@@ -185,4 +185,4 @@ int print_binary(va_list types, char buffer[],
 		}
 	}
 	return (count);
-}/*by nancykibara and melkiphilipo*/
+} /*by nancykibara and melkiphilipo*/
