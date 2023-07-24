@@ -8,6 +8,40 @@
  *
  * Return: the number of characters printed
  */
+int print_char(va_list args)
+{
+	char c = va_arg(args, int);
+
+	write(1, &c, 1);
+	return (1);
+}
+
+/**
+ * print_string - prints a string
+ * @args: argument list
+ *
+ * Return: number of characters printed
+ */
+int print_string(va_list args)
+{
+	char *str = va_arg(args, cahr *);
+	int count = 0;
+	int j;
+
+	for (j = 0; str[j] != '\0'; j++)
+	{
+		write(1, &str[j], 1);
+		count++;
+	}
+	return (count);
+}
+
+/**
+ * _printf - produces output according to a format
+ * @format: character string
+ *
+ * Return: the number of characters printed
+ */
 
 int _printf(const char *format, ...)
 {
@@ -25,31 +59,15 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-				{
-					char c = va_arg(args, int);
-
-					write(1, &c, 1);
-					count++;
+					count += print_char(args);
 					break;
-				}
 				case 's':
-				{
-					char *str = va_arg(args, char *);
-					int j;
-
-					for (int j = 0; str[j] != '\0'; j++)
-					{
-						write(1, &str[j], 1);
-						count++;
-					}
+					count += print_string(args);
 					break;
-				}
 				case '%':
-				{
 					write(1, "%", 1);
 					count++;
 					break;
-				}
 			}
 		}
 		else
