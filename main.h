@@ -2,6 +2,13 @@
 #define MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
+<<<<<<< HEAD
+
+
+#define S_LONG
+#define S_SHORT
+
+=======
 #include <unistd.h>
 
 #define UNUSED(x) (void)(x)
@@ -38,11 +45,20 @@ struct fmt
  * @fm_t: The function associated.
  */
 typedef struct fmt fmt_t;
+>>>>>>> 25172f2864e6c31756e63fdc42460c5bbc5cd72b
 
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
 		va_list list, char buffer[], int flags, int width, int precision, int size);
 
+<<<<<<< HEAD
+
+/* other specifiers */
+int handle_width(const char *format, int *p, va_list list);
+int handle_precision(const char *format, int *p, va_list list);
+
+#endif /* MAIN_H */
+=======
 /****************** FUNCTIONS ******************/
 
 /* Functions to print chars and strings */
@@ -69,6 +85,7 @@ int print_hexa_upper(va_list types, char buffer[],
 
 int print_hexa(va_list types, char map_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
+>>>>>>> 25172f2864e6c31756e63fdc42460c5bbc5cd72b
 
 /* Function to print non printable characters */
 int print_non_printable(va_list types, char buffer[],
