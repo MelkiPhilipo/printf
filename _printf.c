@@ -24,7 +24,7 @@ int print_char(va_list args)
  */
 int print_string(va_list args)
 {
-	char *str = va_arg(args, cahr *);
+	char *str = va_arg(args, char *);
 	int count = 0;
 	int j;
 
@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	for (int i = 0; format[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
