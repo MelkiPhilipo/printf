@@ -1,7 +1,8 @@
-#include "main.h"
 #include <stdarg.h>
 #include <unistd.h>
-#include <string.h>
+#include "main.h"
+
+int _puts(char *str);
 
 /**
  * _printf - produces output according to a format
@@ -29,8 +30,7 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				case 's':
-					count += write(1, va_arg(args, char *),
-						strlen(va_arg(args, char *)));
+					count += _puts(va_arg(args, char *));
 					break;
 				case '%':
 					write(1, "%", 1);
@@ -48,5 +48,23 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
+	return (count);
+}
+
+/**
+ * _puts - writes a string to the standard output
+ * @str: string to write
+ *
+ * Return: the number of characters written
+ */
+int _puts(char *str)
+{
+	int count = 0;
+
+	while (*str)
+	{
+		write(1, str++, 1);
+		count++;
+	}
 	return (count);
 }
