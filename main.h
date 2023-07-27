@@ -24,25 +24,23 @@
  * @fmt: The format.
  * @fn: The function associated.
  */
-struct fmt
-{
-	char fmt;
-	int (*fn)(va_list, char[], int, int, int, int);
-};
-
-
-/**
- * typedef struct fmt fmt_t - struct op
- *
- * @fmt: The format.
- * @fm_t: The function associated.
- */
 typedef struct fmt fmt_t;
 
+/**
+ * handle_print - handles printing of different types according to format
+ * @fmt: the format string
+ * @i: pointer to the current position in the format string
+ * @list: list of arguments passed to _printf
+ * @buffer: buffer to store the output
+ * @flags: flags to modify the output
+ * @width: minimum number of characters to print
+ * @precision: maximum number of characters to print for some types
+ * @size: length modifier for some types
+ * Return: number of characters printed or -1 on error
+ */
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
-va_list list, char buffer[], int flags, int width, int precision, int size);
-
+		va_list list, char buffer[], int flags, int width, int precision, int size);
 /****************** FUNCTIONS ******************/
 
 /* Functions to print chars and strings */
@@ -80,7 +78,7 @@ int print_pointer(va_list types, char buffer[],
 /* Functions to handle other specifiers */
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
-int get_precision(const char *format, int *i, va_list list);
+int handle_precision(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
 
 /*Function to print string in reverse */
