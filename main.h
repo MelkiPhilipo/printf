@@ -44,6 +44,7 @@ int handle_print(const char *fmt, int *i,
 /****************** FUNCTIONS ******************/
 
 /* Functions to print chars and strings */
+int _puts(char *str);
 int print_char(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 int print_string(va_list types, char buffer[],
@@ -80,6 +81,8 @@ int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
 int handle_precision(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
+void print_int(int n);
+void handle_specifiers(const char *format, ...);
 
 /*Function to print string in reverse */
 int print_reverse(va_list types, char buffer[],
