@@ -54,8 +54,7 @@ int print_percent(va_list types, char buffer[],
 
 /* Functions to print numbers */
 void print_int(int n);
-int print_binary(va_list types, char buffer[],
-		int flags, int width, int precision, int size);
+int print_binary(unsigned int n);
 int print_unsigned(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 int print_octal(va_list types, char buffer[],
