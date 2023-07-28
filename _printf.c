@@ -1,6 +1,5 @@
 #include <stdarg.h>
 #include <unistd.h>
-#include "main.h"
 
 int _puts(char *str);
 
@@ -8,7 +7,8 @@ int _puts(char *str);
  * _printf - produces output according to a format
  * @format: character string composed of zero or more directives
  *
- * Return: the number of characters printed
+ * Return: the number of characters printed (excluding the null byte used to)
+ * end putput to strings)
  */
 int _printf(const char *format, ...)
 {
