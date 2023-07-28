@@ -8,16 +8,23 @@
 #define BUFF_SIZE 1024
 
 /* FLAGS */
-#define F_MINUS 1
-#define F_PLUS 2
-#define F_ZERO 4
-#define F_HASH 8
-#define F_SPACE 16
+#define F_MINUS 
+#define F_PL
 
-/* SIZES */
-#define S_LONG 2
-#define S_SHORT 1
 
+<<<<<<< HEAD
+
+
+
+
+/* Functions handle other specifiers */
+int handle_flags(const char *format, int *p);
+int handle_width(const char *format, int *p, va_list list);
+int handle_precision(const char *format, int *p, va_list list);
+int handle_length(const char *format, int *p);
+
+
+=======
 /**
  * struct fmt - Struct op
  *
@@ -112,5 +119,6 @@ int is_digit(char);
 
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
+>>>>>>> fff3543885ce8b0b73f5fad012c0855c45d26a33
 
 #endif /* MAIN_H */
