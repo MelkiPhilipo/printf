@@ -16,27 +16,26 @@ int handle_precision(const char *format, int *p, va_list list)
 	if (format[index] != '.')
 	return (precision);
 
-	for (index += 1; format[index] != '\0'; index++)
+	index++;
+	if (format[index] == '*')
 	{
-		if (_isdigit(format[index]))
-		{
-			precision = precision * 10 + (format[index] - '0');
-		}
-		else if (format[index] == (*))
-		{
-			index++;
-			width = va_arg(list, int);
-			break;
-		}
-		else
-		{
-			return (-1);
-		}
-
-		if (precision < -1)
-			return (-1);
-		*p = index - 1;
-		return
-			(width);
+		index++;
+		precision = va_arg(list, int);
 	}
+	else
+	{
+		for (; format[index] != '\0'; index++)
+		{
+			if (format[index] >= '0' && format[index] <= '9')
+			{
+				precision = precision == -1 ? 0 : precision;
+				precision = precision * 10 + (format[index] - '0');
+			}
+			else
+				break;
+		}
+	}
+
+	*p = index - 1;
+	return (precision);
 }

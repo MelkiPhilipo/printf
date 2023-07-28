@@ -1,7 +1,7 @@
 #include "main.h"
 
-#define S_LONG
-#define S_SHORT
+#define S_LONG 2
+#define S_SHORT 1
 
 /**
  * handle_length- calculate length of argument
@@ -12,25 +12,17 @@
 
 int handle_length(const char *format, int *p)
 {
-	int _length = 0;
-	int index = 0;
+	int size = 0;
 
-	if (format[*index + 1] == l)
-		size = S_LONG
-
-	else if (format[*index + 1] == 1)
-		size = S_SHORT
-
+	if (format[*p + 1] == 'l')
+		size = S_LONG;
+	else if (format[*p + 1] == 'h')
+		size = S_SHORT;
 	else
-	{
 		return (-1);
-	}
 
-	*p = index - 1;
+	*p += 1;
 
-	return (-1);
+	return (size);
 
 }
-
-
-
