@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	int printed_chars = 0;
 	va_list list;
 	char buffer[BUFF_SIZE];
-=======
 int _puts(char *str);
 
 /**
@@ -30,14 +29,12 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 	char c;
->>>>>>> fff3543885ce8b0b73f5fad012c0855c45d26a33
 
 	va_start(args, format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
-<<<<<<< HEAD
 			printed_chars++;
 		}
 		else
@@ -45,7 +42,6 @@ int _printf(const char *format, ...)
 			if (printed == -1)
 				return (-1);
 			printed_chars += printed;
-=======
 			format++;
 			switch (*format)
 			{
