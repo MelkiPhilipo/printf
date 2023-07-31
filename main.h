@@ -75,6 +75,11 @@ int handle_precision(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
 void print_int(int n);
 void handle_specifiers(const char *format, ...);
+int handle_format_specifier(const char *format, int i, va_list args,
+		char *buffer, int buffer_index);
+int handle_char_specifier(va_list args, char *buffer, int buffer_index);
+int handle_string_specifier(va_list args, char *buffer, int buffer_index);
+int handle_S_specifier(va_list args, char *buffer, int buffer_index);
 
 /*Function to print string in reverse */
 int print_reverse(va_list types, char buffer[],
