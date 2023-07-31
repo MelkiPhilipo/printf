@@ -79,6 +79,8 @@ void print_hex(unsigned int n, int uppercase)
 	if (n / 16)
 		print_hex(n / 16, uppercase);
 	if (n % 16 < 10)
+		_putchar(n % 16 + '0');
+	else if (uppercase)
 		_putchar(n % 16 - 10 + 'A');
 	else
 		_putchar(n % 16 - 10 + 'a');
